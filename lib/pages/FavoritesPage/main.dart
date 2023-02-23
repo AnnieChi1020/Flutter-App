@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/main.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +25,12 @@ class FavoritesPage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.favorite),
               title: Text(pair.asLowerCase),
+              trailing: IconButton(
+                icon: const Icon(Icons.highlight_off_outlined),
+                onPressed: () {
+                  appState.removeFavorite(pair);
+                },
+              ),
             ),
         ],
       ),
